@@ -4,6 +4,11 @@ const KeyArray = () => {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const handleClick = (i) => {
+    setCurrentIndex(i);
+    alert(array[i]);
+  };
+
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       if (currentIndex < array.length - 1) {
@@ -20,7 +25,8 @@ const KeyArray = () => {
         <h1
           key={i}
           tabIndex={0}
-          onKeyDown={handleKeyPress}
+          onClick={() => handleClick(i)}
+          onKeyDown={(event) => handleKeyPress(event)}
           style={{
             cursor: "pointer",
             fontWeight: i === currentIndex ? "bold" : "normal",
