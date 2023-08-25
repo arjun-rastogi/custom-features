@@ -1,10 +1,12 @@
 import React from "react";
-import { GoogleLogin } from "./features/";
+import { GoogleLogin, LinkedInLogin, KeyArray } from "./features/";
 
 const App = () => {
   return (
     <>
-      <GoogleLogin />
+      <KeyArray />
+      {/* <GoogleLogin />
+      <LinkedInLogin /> */}
     </>
   );
 };
